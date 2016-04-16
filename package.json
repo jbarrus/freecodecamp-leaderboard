@@ -1,0 +1,16 @@
+{
+  "name": "freecodecamp-leaderboard",
+  "version": "1.0.0",
+  "description": "Scrapes FreeCodeCamp profiles for user information and displays in a leaderboard",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bluebird": "^3.3.5",
+    "cheerio": "^0.20.0",
+    "request": "^2.71.0"
+  }
+}
