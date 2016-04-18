@@ -3,8 +3,6 @@ var Promise = require('bluebird');
 var request = Promise.promisify(require('request'));
 Promise.promisifyAll(request);
 
-  url = 'https://www.freecodecamp.com/nmuirbrook';
-
 getUsers()
   .then(function(users) {
     return Promise.all(users.map(getUserInfo));
@@ -17,7 +15,9 @@ function getUserInfo(username) {
   return request('https://www.freecodecamp.com/' + username)
     .then(function(response) {
       var $ = cheerio.load(response.body);
-      
+
+      //freecodecamp puts very few classes/ids in so it's pretty hard to get to the specific DOM elements
+
       var points = $('body > div.container > div:nth-child(6) > div > h1.flat-top.text-primary').text();
       points = parseInt(points.match(/\d+/)[0]);
       
